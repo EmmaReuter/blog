@@ -72,4 +72,4 @@ I ran out of time trying to get my escape to work. Afterwards, I read through wr
 class A: 0
 ````
 
-This example uses decorators around a class to allow us to execute arbitrary code.
+This example uses decorators around a class to allow us to execute arbitrary code. I also enjoyed reading [writeups](https://kileak.github.io/ctf/2022/googlectf22-weather/) for the weather challenge.
