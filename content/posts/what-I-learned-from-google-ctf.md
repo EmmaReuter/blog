@@ -61,6 +61,7 @@ class A:
 
 a = A()
 a.__getitem__ = print
+a["hello"]
 ````
 
 I ran out of time trying to get my escape to work. Afterwards, I read through writeups and learned that you can use decorators to bypass the sandbox.
