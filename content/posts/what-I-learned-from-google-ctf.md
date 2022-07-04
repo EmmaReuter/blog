@@ -1,7 +1,7 @@
 ---
 title: "What I learned From Google Ctf"
 date: 2022-07-03T21:02:55-05:00
-draft: true
+draft: false
 ---
 
 ## Treebox
@@ -52,7 +52,7 @@ if verify_secure(tree):  # Safe to execute!
   compiled = compile(source_code, "input.py", 'exec')
   exec(compiled)
 ````
-My first instict was to use decorators, but I wasn't sure that would allow me to escape the call AST check. I also then looked into looked into the [AST](https://docs.python.org/3/library/ast.html) documentation. I missed that exceptions could call code so I tried to use getitem to call print.
+My first instict was to use decorators, but I wasn't sure that would allow me to escape the call AST check. I then looked into the [AST](https://docs.python.org/3/library/ast.html) documentation to see if there was anything useful. I missed that exceptions could call code so I tried to use `__getitem__` to call print.
 
 ````
 class A:
@@ -63,7 +63,7 @@ a = A()
 a.__getitem__ = print
 ````
 
-I ran out of time trying to get my escape to work. Afterwards I read through writeups and learned that you can use decorators to bypass the sandbox.
+I ran out of time trying to get my escape to work. Afterwards, I read through writeups and learned that you can use decorators to bypass the sandbox.
 
 ````
 @eval
